@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0d0d0d;
+      font-family: 'Georgia', serif;
+      color: #f5efe6;
+      padding: 60px 40px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #c9a84c;
+      font-size: 2.5rem;
+      font-style: italic;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 600px;
+      background: #141414;
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 50px;
+    }
+
+    .form-group {
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: #1c1c1c;
+      border: 1px solid rgba(201,168,76,0.15);
+      color: #f5efe6;
+      padding: 12px 16px;
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #c9a84c;
+    }
+
+    select option { background: #1c1c1c; }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    /* Rating Stars */
+    .stars {
+      display: flex;
+      gap: 8px;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+    .stars input { display: none; }
+
+    .stars label {
+      font-size: 1.8rem;
+      color: #333;
+      cursor: pointer;
+      letter-spacing: 0;
+      text-transform: none;
+      transition: color 0.2s;
+    }
+
+    .stars input:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: #c9a84c;
+    }
+
+    /* Liked Toggle */
+    .toggle-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .toggle-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid rgba(201,168,76,0.2);
+      background: transparent;
+      color: #888;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Georgia', serif;
+    }
+
+    .toggle-btn.active {
+      border-color: #c9a84c;
+      color: #c9a84c;
+      background: rgba(201,168,76,0.08);
+    }
+
+    /* Submit */
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: #c9a84c;
+      border: none;
+      color: #0d0d0d;
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover { background: #e2c97e; }
+
+    /* Success Message */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: #c9a84c;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    .nav-row {
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 32px;
+      border: 1px solid rgba(201,168,76,0.4);
+      background: transparent;
+      color: #c9a84c;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #c9a84c;
+      color: #0d0d0d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Your Feedback</h1>
+  <p class="subtitle">Help us improve · Your opinion matters</p>
+
+  <div class="form-box">
+
+    <!-- Name -->
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+    </div>
+
+    <!-- Age -->
+    <div class="form-group">
+      <label>Your Age</label>
+      <input type="number" id="age" placeholder="Enter your age" min="1" max="100">
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label>Your Email</label>
+      <input type="email" id="email" placeholder="Enter your email">
+    </div>
+
+    <!-- Product -->
+    <div class="form-group">
+      <label>Which Product?</label>
+      <select id="product_id">
+        <option value="1">Wooden Keychain</option>
+        <option value="2">Acrylic Keychain</option>
+        <option value="3">Metal Keychain</option>
+        <option value="4">Rose Bouquet</option>
+        <option value="5">Sunflower</option>
+        <option value="6">Lily</option>
+      </select>
+    </div>
+
+    <!-- Liked -->
+    <div class="form-group">
+      <label>Did You Like It?</label>
+      <div class="toggle-row">
+        <button class="toggle-btn active" id="likedYes" onclick="setLiked(true)">
+          👍 Yes I liked it
+        </button>
+        <button class="toggle-btn" id="likedNo" onclick="setLiked(false)">
+          👎 Needs improvement
+        </button>
+      </div>
+    </div>
+
+    <!-- Rating -->
+    <div class="form-group">
+      <label>Rating</label>
+      <div class="stars">
+        <input type="radio" name="rating" id="s5" value="5">
+        <label for="s5">★</label>
+        <input type="radio" name="rating" id="s4" value="4">
+        <label for="s4">★</label>
+        <input type="radio" name="rating" id="s3" value="3" checked>
+        <label for="s3">★</label>
+        <input type="radio" name="rating" id="s2" value="2">
+        <label for="s2">★</label>
+        <input type="radio" name="rating" id="s1" value="1">
+        <label for="s1">★</label>
+      </div>
+    </div>
+
+    <!-- Reason -->
+    <div class="form-group">
+      <label>Tell Us More</label>
+      <textarea id="reason"
+        placeholder="What did you like or what can we improve?">
+      </textarea>
+    </div>
+
+    <button class="submit-btn" onclick="submitFeedback()">
+      Submit Feedback ✦
+    </button>
+
+    <div class="success-msg" id="successMsg">
+      ✦ Thank you for your feedback! We really appreciate it 🎨
+    </div>
+
+  </div>
+
+  <div class="nav-row">
+    <a href="/samples" class="btn">← Back to Samples</a>
+  </div>
+
+  <script>
+    let liked = true;
+
+    function setLiked(val) {
+      liked = val;
+      document.getElementById('likedYes').classList.toggle('active', val);
+      document.getElementById('likedNo').classList.toggle('active', !val);
+    }
+
+    async function submitFeedback() {
+      const name     = document.getElementById('name').value.trim();
+      const age      = document.getElementById('age').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const product  = document.getElementById('product_id').value;
+      const reason   = document.getElementById('reason').value.trim();
+      const rating   = document.querySelector('input[name="rating"]:checked').value;
+
+      if (!name || !age || !reason) {
+        alert('Please fill in Name, Age and Feedback reason!');
+        return;
+      }
+
+      const res = await fetch('/submit_feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name, age, email,
+          product_id: product,
+          liked: liked,
+          reason, rating
+        })
+      });
+
+      const data = await res.json();
+
+      document.getElementById('successMsg').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('successMsg').style.display = 'none';
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
