@@ -1,0 +1,488 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #1a1a2e;
+      font-family: 'Georgia', serif;
+      color: white;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e2b96f;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #e2b96f;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 0 auto 50px auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #e2b96f;
+      color: #1a1a2e;
+      padding: 12px;
+      text-align: left;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #333;
+      color: #ccc;
+    }
+
+    tr:hover td {
+      background-color: #2a2a4a;
+      color: white;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 10px 25px;
+      background-color: #e2b96f;
+      color: #1a1a2e;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .next-btn {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 15px 40px;
+      background-color: #e2b96f;
+      color: #1a1a2e;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .back-btn:hover, .next-btn:hover {
+      background-color: white;
+    }
+
+    /* Chatbot */
+    .chatbot {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #e2b96f;
+      color: #1a1a2e;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="/" class="back-btn">← Back</a>
+  <h1>🎨 Our Products</h1>
+-->
+
+  <!-- Keychain Table --><!--
+  <div class="section">
+    <h2>🔑 Keychains</h2>
+    <table>
+      <tr>
+        <th>Base</th>
+        <th>Starting Price (₹)</th>
+        <th>Stock</th>
+      </tr>
+      {% for item in keychains %}
+      <tr>
+        <td>{{ item['base'] }}</td>
+        <td>₹{{ item['starting_price'] }}</td>
+        <td>{{ item['stock'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+-->
+  <!-- Flowers Table --><!--
+  <div class="section">
+    <h2>🌸 Flowers</h2>
+    <table>
+      <tr>
+        <th>Type</th>
+        <th>Price (₹)</th>
+        <th>Stock</th>
+      </tr>
+      {% for item in flowers %}
+      <tr>
+        <td>{{ item['type'] }}</td>
+        <td>₹{{ item['price'] }}</td>
+        <td>{{ item['stock'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <a href="/samples" class="next-btn">View Samples →</a>
+-->
+  <!-- Chatbot Button -->
+  <!--<div class="chatbot">💬 Chat with us</div>
+
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0d0d0d;
+      font-family: 'Georgia', serif;
+      color: #f5efe6;
+      padding: 60px 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c9a84c;
+      font-size: 2.5rem;
+      margin-bottom: 60px;
+      font-style: italic;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 40px;
+    }
+
+    h2 {
+      color: #e2c97e;
+      margin-bottom: 24px;
+      font-size: 1.4rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      padding: 10px 0;
+      text-align: left;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    td {
+      padding: 14px 0;
+      font-size: 0.9rem;
+      color: #bbb;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    tr:hover td { color: #f5efe6; }
+
+    .price { color: #e2c97e; }
+
+    .nav-row {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn {
+      padding: 12px 32px;
+      border: 1px solid rgba(201,168,76,0.4);
+      background: transparent;
+      color: #c9a84c;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #c9a84c;
+      color: #0d0d0d;
+    }
+
+    /* Chatbot */
+    .chatbot-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 54px;
+      height: 54px;
+      background: #c9a84c;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Our Products</h1>
+
+  <!-- Keychains -->
+  <div class="section">
+    <h2>🔑 Keychains</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Base</th>
+          <th>Starting Price</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in keychains %}
+        <tr>
+          <td>{{ item['base'] }}</td>
+          <td class="price">₹{{ item['starting_price'] }}</td>
+          <td>{{ item['stock'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Flowers -->
+  <div class="section">
+    <h2>🌸 Flowers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Price</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in flowers %}
+        <tr>
+          <td>{{ item['type'] }}</td>
+          <td class="price">₹{{ item['price'] }}</td>
+          <td>{{ item['stock'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="nav-row">
+    <a href="/" class="btn">← Back</a>
+    <a href="/samples" class="btn">View Samples →</a>
+  </div>
+
+  <button class="chatbot-btn">💬</button>
+<!-- ── CHATBOT BUTTON ── -->
+<button class="chatbot-toggle" id="chatToggle" onclick="toggleChat()">💬</button>
+
+<!-- ── CHATBOT WINDOW ── -->
+<div class="chatbot-window" id="chatWindow">
+  <div class="chatbot-header">
+    <span>Chat with us ✦</span>
+    <button onclick="toggleChat()" style="background:none;border:none;color:#0d0d0d;cursor:pointer;font-size:1rem;">✕</button>
+  </div>
+  <div class="chatbot-messages" id="chatMessages">
+    <div class="msg bot">Hello! Welcome to My World 🎨</div>
+    <div class="msg bot">Ask me about prices, availability or orders!</div>
+  </div>
+  <div class="chatbot-input-row">
+    <input id="chatInput" class="chatbot-input"
+           placeholder="Type a message..."
+           onkeydown="if(event.key==='Enter') sendMsg()">
+    <button class="chatbot-send" onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
+<style>
+  .chatbot-toggle {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    width: 54px; height: 54px;
+    background: #c9a84c;
+    border: none; border-radius: 50%;
+    font-size: 1.4rem; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    z-index: 1000;
+    transition: transform 0.3s;
+  }
+  .chatbot-toggle:hover { transform: scale(1.1); }
+
+  .chatbot-window {
+    position: fixed;
+    bottom: 100px; right: 30px;
+    width: 300px;
+    background: #141414;
+    border: 1px solid rgba(201,168,76,0.2);
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+  }
+
+  .chatbot-window.open { display: flex; }
+
+  .chatbot-header {
+    background: #c9a84c;
+    color: #0d0d0d;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .chatbot-messages {
+    padding: 16px;
+    height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .msg {
+    font-size: 0.8rem;
+    padding: 10px 14px;
+    max-width: 85%;
+    line-height: 1.4;
+  }
+
+  .msg.bot {
+    background: #1c1c1c;
+    border-left: 2px solid #c9a84c;
+    color: #ccc;
+    align-self: flex-start;
+  }
+
+  .msg.user {
+    background: rgba(201,168,76,0.1);
+    border-right: 2px solid #c9a84c;
+    color: #f5efe6;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .chatbot-input-row {
+    display: flex;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .chatbot-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 14px;
+    color: #f5efe6;
+    font-size: 0.8rem;
+    outline: none;
+    font-family: 'Georgia', serif;
+  }
+
+  .chatbot-input::placeholder { color: #555; }
+
+  .chatbot-send {
+    background: #c9a84c;
+    border: none;
+    padding: 0 16px;
+    color: #0d0d0d;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+</style>
+
+<script>
+  function toggleChat() {
+    const w = document.getElementById('chatWindow');
+    w.classList.toggle('open');
+    document.getElementById('chatToggle').textContent =
+      w.classList.contains('open') ? '✕' : '💬';
+  }
+
+  async function sendMsg() {
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if (!text) return;
+
+    const msgs = document.getElementById('chatMessages');
+
+    // Show user message
+    const userMsg = document.createElement('div');
+    userMsg.className = 'msg user';
+    userMsg.textContent = text;
+    msgs.appendChild(userMsg);
+    input.value = '';
+    msgs.scrollTop = msgs.scrollHeight;
+
+    // Send to Flask /chat route
+    const res = await fetch('/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text })
+    });
+
+    const data = await res.json();
+
+    // Show bot reply
+    const botMsg = document.createElement('div');
+    botMsg.className = 'msg bot';
+    const parts = data.reply.split('\n');
+    botMsg.innerHTML = '';
+    parts.forEach(part => {
+      if (part.startsWith('https://wa.me')) {
+        const a = document.createElement('a');
+        a.href = part;
+        a.target = '_blank';
+        a.textContent = '📲 Chat on WhatsApp';
+        a.style.cssText = 'color:#25D366;display:block;margin-top:6px;font-weight:bold;';
+        botMsg.appendChild(a);
+      } else {
+        const t = document.createElement('span');
+        t.textContent = part;
+        botMsg.appendChild(t);
+      }
+    });
+    
+    msgs.appendChild(botMsg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+</script>
+</body>
+</html>
