@@ -13,8 +13,8 @@ def create_tables():
         stock INTEGER DEFAULT 0
     )''')
 
-    # Table 2: Flowers
-    cursor.execute('''CREATE TABLE IF NOT EXISTS flowers (
+    # Table 2: Aipan
+    cursor.execute('''CREATE TABLE IF NOT EXISTS aipan (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         type TEXT NOT NULL,
         price REAL NOT NULL,
@@ -80,18 +80,18 @@ def create_tables():
     cursor.execute("SELECT COUNT(*) FROM keychains")
     if cursor.fetchone()[0] == 0:
         cursor.executemany("INSERT INTO keychains (base, starting_price, stock) VALUES (?,?,?)", [
-            ("Wooden", 119, 10),
-            ("Acrylic", 199, 15),
-            ("Black Acrylic", 149, 8),
+            ("Wooden", 149, 10),
+            ("Acrylic", 369, 15),
+            ("Black Acrylic", 179, 20),
         ])
 
-    # Sample data for flowers
-    cursor.execute("SELECT COUNT(*) FROM flowers")
+    # Sample data for aipan
+    cursor.execute("SELECT COUNT(*) FROM aipan")
     if cursor.fetchone()[0] == 0:
-        cursor.executemany("INSERT INTO flowers (type, price, stock) VALUES (?,?,?)", [
-            ("Rose Bouquet", 299, 20),
-            ("Sunflower", 299, 25),
-            ("Tulip", 249, 18),
+        cursor.executemany("INSERT INTO aipan (type, price, stock) VALUES (?,?,?)", [
+            ("Karwachauth Special", 849, 7),
+            ("Chowki", 599, 13),
+            ("Diyas", 199, 10),
         ])
 
     conn.commit()

@@ -23,9 +23,9 @@ def products():
     conn = get_db()
     cursor = conn.cursor()
     keychains = cursor.execute("SELECT * FROM keychains").fetchall()
-    flowers = cursor.execute("SELECT * FROM flowers").fetchall()
+    aipan = cursor.execute("SELECT * FROM aipan").fetchall()
     conn.close()
-    return render_template("products.html", keychains=keychains, flowers=flowers)
+    return render_template("products.html", keychains=keychains, aipan=aipan )
 
 # ── SAMPLES ──
 @app.route("/samples")
@@ -64,11 +64,11 @@ def get_bot_reply(message):
     if any(w in msg for w in ["hello", "hi", "hey"]):
         return "Hello! Welcome to My World of art and craft🎨 How can I help you today?"
     elif "price" in msg or "cost" in msg or "how much" in msg:
-        return "Keychains start from ₹99, Flowers from ₹179. Check our Products page for full pricing!"
+        return "Keychains start from ₹179, aipan from ₹199. Check our Products page for full pricing!"
     elif "keychain" in msg:
-        return "We have Wooden (₹99), Acrylic (₹149), Metal (₹199) and Resin (₹249) keychains. All handmade!"
-    elif "flower" in msg or "rose" in msg or "bouquet" in msg:
-        return "We have Roses, Sunflowers, Lilies and Lavender. All freshly arranged! 🌸"
+        return "We have Wooden (₹99), Acrylic (₹149), Black acrylic (₹199) and hexagonal(₹249) keychains. All handmade!"
+    elif "aipan" in msg or "traditional art" in msg:
+        return "We have beautifully painted aipan artworks for mandir or pooja"
     elif "order" in msg or "buy" in msg or "purchase" in msg:
         return f"To place an order please contact us on WhatsApp 👇\n{whatsapp_link}"
     elif "available" in msg or "stock" in msg:

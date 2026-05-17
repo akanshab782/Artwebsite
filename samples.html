@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,18 +8,23 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: #0d0d0d;
-      font-family: 'Georgia', serif;
-      color: #f5efe6;
-      padding: 60px 40px;
+      background-color: #ffb6c1;
+     background-image:
+     radial-gradient(circle at 10% 20%, #ffd6e0 0%, transparent 40%),
+     radial-gradient(circle at 90% 80%, #ffccd5 0%, transparent 40%),
+     radial-gradient(circle at 50% 50%, #ffe4ec 0%, transparent 60%);
+     font-family: 'Georgia', serif;
+     color: #3a1a1a;
+     padding: 60px 40px;
+     min-height: 100vh;
     }
 
     h1 {
-      text-align: center;
-      color: #c9a84c;
-      font-size: 2.5rem;
-      font-style: italic;
-      margin-bottom: 60px;
+     text-align: center;
+     color: #7b3f00;
+     font-size: 2.5rem;
+     font-style: italic;
+     margin-bottom: 60px;
     }
 
     /* ── MAIN GRID ── */
@@ -31,16 +37,17 @@
     }
 
     .card {
-      background: #1c1c1c;
-      aspect-ratio: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s;
+     background: rgba(255,255,255,0.4);
+     border: 1px solid rgba(123,63,0,0.15);
+     aspect-ratio: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     position: relative;
+     overflow: hidden;
+     transition: transform 0.3s;
     }
 
     .card:hover { transform: scale(1.02); }
@@ -48,17 +55,17 @@
     .card-emoji { font-size: 3.5rem; }
 
     .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(13,13,13,0.88);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s;
-      padding: 20px;
-      text-align: center;
+     position: absolute;
+     inset: 0;
+     background: rgba(123,63,0,0.85);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     opacity: 0;
+     transition: opacity 0.3s;
+     padding: 20px;
+     text-align: center;
     }
 
     .card:hover .card-overlay { opacity: 1; }
@@ -109,7 +116,7 @@
     .modal-bg.open { display: flex; }
 
     .modal {
-      background: #141414;
+      background: #fff5f0;
       border: 1px solid rgba(201,168,76,0.2);
       width: 100%;
       max-width: 900px;
@@ -134,7 +141,7 @@
     .modal-title {
       font-size: 1.8rem;
       font-style: italic;
-      color: #c9a84c;
+      color: #7b3f00;
       margin-bottom: 8px;
     }
 
@@ -154,7 +161,7 @@
     }
 
     .photo-card {
-      background: #1c1c1c;
+      background: #fff;
       border: 1px solid rgba(201,168,76,0.1);
       overflow: hidden;
       transition: border-color 0.3s;
@@ -167,7 +174,7 @@
     .photo-box {
       width: 100%;
       aspect-ratio: 1;
-      background: #252525;
+      background:#f9e8ee ;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -187,20 +194,20 @@
 
     .photo-name {
       font-size: 0.85rem;
-      color: #e2c97e;
+      color: #7b3f00;
       margin-bottom: 4px;
     }
 
     .photo-desc {
       font-size: 0.72rem;
-      color: #777;
+      color: #a0522d;
       margin-bottom: 8px;
       line-height: 1.4;
     }
 
     .photo-price {
       font-size: 0.9rem;
-      color: #c9a84c;
+      color: #c1440e;
       font-weight: bold;
     }
 
@@ -242,8 +249,9 @@
 <body>
 
   <h1>Artwork Samples</h1>
+-->
 
-  <!-- ── MAIN CATEGORY GRID ── -->
+  <!-- ── MAIN CATEGORY GRID ── --><!--
   <div class="grid">
 
     <div class="card" onclick="openModal('keychains')">
@@ -255,28 +263,28 @@
       </div>
     </div>
 
-    <div class="card" onclick="openModal('flowers')">
+    <div class="card" onclick="openModal('aipan')">
       <div class="card-emoji">🌸</div>
       <div class="card-overlay">
-        <p class="card-name">Flowers</p>
+        <p class="card-name">Aipan</p>
         <p class="card-desc">Click to view all types</p>
         <button class="view-btn">View Samples</button>
       </div>
     </div>
 
-    <div class="card" onclick="openModal('canvas')">
+    <div class="card" onclick="openModal('mandala')">
       <div class="card-emoji">🎨</div>
       <div class="card-overlay">
-        <p class="card-name">Canvas Art</p>
+        <p class="card-name">Mandala Art</p>
         <p class="card-desc">Click to view all paintings</p>
         <button class="view-btn">View Samples</button>
       </div>
     </div>
 
-    <div class="card" onclick="openModal('resin')">
+    <div class="card" onclick="openModal('diy')">
       <div class="card-emoji">💎</div>
       <div class="card-overlay">
-        <p class="card-name">Resin Art</p>
+        <p class="card-name">DIY Art</p>
         <p class="card-desc">Click to view all designs</p>
         <button class="view-btn">View Samples</button>
       </div>
@@ -306,8 +314,8 @@
     <a href="/products" class="btn">← Back</a>
     <a href="/feedback" class="btn">Leave Feedback →</a>
   </div>
-
-  <!-- ── MODAL POPUP ── -->
+-->
+  <!-- ── MODAL POPUP ── --><!--
   <div class="modal-bg" id="modalBg" onclick="closeModalBg(event)">
     <div class="modal" id="modalBox">
       <button class="modal-close" onclick="closeModal()">✕</button>
@@ -327,48 +335,479 @@
         title: "Keychain Collection",
         subtitle: "Handcrafted · Personalized · Durable",
         items: [
-          { emoji: "🪵", name: "Wooden Keychain", desc: "Hand-carved from natural wood. Customizable text.", price: "₹99" },
-          { emoji: "🔮", name: "Acrylic Keychain", desc: "Clear acrylic with printed design. Lightweight.", price: "₹149" },
-          { emoji: "⚙️", name: "Metal Keychain", desc: "Sturdy metal finish. Long lasting.", price: "₹199" },
-          { emoji: "💎", name: "Resin Keychain", desc: "Crystal clear resin with flowers inside.", price: "₹249" },
-          { emoji: "🎨", name: "Painted Keychain", desc: "Hand painted miniature art.", price: "₹179" },
-          { emoji: "⭐", name: "Glitter Keychain", desc: "Sparkly glitter filled resin.", price: "₹159" },
+          { image:"/static/images/Couples.jpeg", name: "Circular Wooden Keychain", desc: "Customized wedding photo keychain", price: "₹249" },
+          { image:"/static/images/Anime.jpeg", name: "Square Wooden Keychain", desc: "Any anime Characters", price: "₹149" },
+          {image:"/static/images/Nda_squadron.jpeg" , name: "Acrylic Keychain", desc: "Glossy finish. Long lasting.", price: "₹369" },
+          { image:"/static/images/Ghibli_art.jpeg", name: "Square Wooden Keychain", desc: "Customized Ghibli art key chain", price: "₹179" },
+          { image:"/static/images/Evil_eye.jpeg", name: "Black Acrylic Base Keychain", desc: "Black Acrylic base. Hard and long lasting", price: "₹179" },
+          { image:"/static/images/Hexagonal.jpeg", name: "Heaxgonal Acrylic Keychain", desc: "Different shapes available", price: "₹149" },
         ]
       },
-      flowers: {
-        title: "Flower Collection",
-        subtitle: "Fresh · Handpicked · Beautifully Arranged",
+      aipan: {
+        title: "Aipan art Collection",
+        subtitle: "Neat and clean work · Traditional Touch · Beautifull patterns",
         items: [
-          { emoji: "🌹", name: "Red Rose", desc: "Classic red roses. Perfect for gifting.", price: "₹299" },
-          { emoji: "🌻", name: "Sunflower", desc: "Bright yellow sunflowers. Long lasting.", price: "₹199" },
-          { emoji: "💐", name: "Lily", desc: "Elegant white lilies. Sweet fragrance.", price: "₹249" },
-          { emoji: "💜", name: "Lavender", desc: "Calming lavender bunch. Dried variety.", price: "₹179" },
-          { emoji: "🌷", name: "Tulip", desc: "Colorful tulips. Available in mixed colors.", price: "₹229" },
-          { emoji: "🌸", name: "Mixed Bouquet", desc: "Combination of seasonal flowers.", price: "₹349" },
+          { image:"/static/images/Karwachauth_special.jpeg", name: "Karwachauth Special", desc: "One thali,one lota and channi", price: "₹849" },
+          { image:"/static/images/Yellow_chowki.jpeg", name: "Chowki", desc: "Yellow Om Chowki", price: "₹599" },
+          { image:"/static/images/Ganesh_Chowki.jpeg", name: "Chowki", desc: "Ganesh Chowki", price: "₹599" },
+          { image:"/static/images/Diyas.jpeg", name: "Pooja Diya", desc: "Beautifully designed diyas for pooja", price: "₹199" },
+          { image:"/static/images/Chowkis_Mandir.jpeg", name: "All Artworks", desc: "Handpainted artworks for decorating mandir", price: "₹2999" },
         ]
       },
-      canvas: {
-        title: "Canvas Art",
-        subtitle: "Hand Painted · Acrylic · Custom Sizes",
+      mandala: {
+        title: "Mandala Art",
+        subtitle: "Hand Painted · Different Bases · Custom Sizes and designs",
         items: [
-          { emoji: "🌅", name: "Sunset Painting", desc: "Warm sunset over the ocean. A4 size.", price: "₹599" },
-          { emoji: "🌲", name: "Forest Scene", desc: "Dense green forest. Calming artwork.", price: "₹499" },
-          { emoji: "🦋", name: "Butterfly Art", desc: "Colorful butterflies on canvas.", price: "₹449" },
-          { emoji: "🌊", name: "Ocean Waves", desc: "Blue ocean waves. Peaceful vibe.", price: "₹549" },
-          { emoji: "🏔️", name: "Mountain View", desc: "Snow capped mountains. Minimalist style.", price: "₹649" },
-          { emoji: "🌺", name: "Floral Canvas", desc: "Blooming flowers in pastel shades.", price: "₹399" },
+          { image:"/static/images/Black_mandala.jpeg", name: "Minimalist style", desc: "Black background and detailed mandala at center", price: "₹199" },
+          { image:"/static/images/Small_mandala.jpeg", name: "Small sized", desc: "Different sizes available", price: "₹179" },
+          { image:"/static/images/Detailed_colourful.jpeg", name: "Colourful", desc: "Multicoloured", price: "₹129" },
+          { image:"/static/images/Sunflower_mandala.jpeg", name: "Flower at center", desc: "Flowery vibes at center", price: "₹179" },
+          { image:"/static/images/Grey_mandala.jpeg", name: "Random design", desc: "Any design of your choice.", price: "₹229" },
+          { image:"/static/images/Framed_painting.jpeg", name: "Badrinath with mandala", desc: "Beauty of temple and art for your home", price: "₹1999" },
         ]
       },
-      resin: {
-        title: "Resin Art",
-        subtitle: "Crystal Clear · Colorful · Unique",
+      diy: {
+        title: "DIY Art",
+        subtitle: "Art and craft · Colorful · Unique",
         items: [
-          { emoji: "🌊", name: "Ocean Resin Tray", desc: "Blue ocean waves effect. Decorative tray.", price: "₹799" },
-          { emoji: "🌸", name: "Flower Resin Frame", desc: "Real flowers preserved in resin frame.", price: "₹599" },
-          { emoji: "✨", name: "Glitter Coaster", desc: "Set of 4 glitter resin coasters.", price: "₹449" },
-          { emoji: "💎", name: "Resin Paperweight", desc: "Solid resin with flowers inside.", price: "₹349" },
-          { emoji: "🎨", name: "Abstract Resin Art", desc: "Colorful abstract pour art on canvas.", price: "₹699" },
-          { emoji: "🌈", name: "Rainbow Resin Bowl", desc: "Small decorative bowl. Rainbow colors.", price: "₹499" },
+          { image:"/static/images/Paper_Lotus.jpeg", name: "Paper Lotus", desc: "Paper lotus for decoration", price: "₹129" },
+          { image:"/static/images/Butterfly_cd.jpeg", name: "Butterfly CD", desc: "Butterfly and Lavender beauty", price: "₹99" },
+          { image:"/static/images/Miniature_pot.jpeg", name: "Miniature Pot", desc: "Mini desk decor", price: "₹79" },
+          { image:"/static/images/PistaShell_Flower.jpeg", name: "Pista shell flower", desc: "Pista Shell converted into flower", price: "₹99" },
+        ]
+      },
+      bouquets: {
+        title: "Bouquet Collection",
+        subtitle: "Handtied · Gift Ready · Fresh",
+        items: [
+          { emoji: "💐", name: "Classic Bouquet", desc: "Mixed roses and lilies. Ribbon tied.", price: "₹399" },
+          { emoji: "🌹", name: "Red Rose Bouquet", desc: "12 red roses. Romantic gift.", price: "₹499" },
+          { emoji: "🌻", name: "Sunflower Bouquet", desc: "6 sunflowers with greens. Cheerful.", price: "₹349" },
+          { emoji: "🎀", name: "Gift Wrapped Bouquet", desc: "Premium wrapping with ribbon bow.", price: "₹599" },
+          { emoji: "💜", name: "Purple Dream", desc: "Lavender and violet flowers mix.", price: "₹449" },
+          { emoji: "🌷", name: "Pastel Bouquet", desc: "Soft pastel colored mixed flowers.", price: "₹379" },
+        ]
+      },
+      mixed: {
+        title: "Mixed Art & Gifts",
+        subtitle: "Customized · Gift Ready · Handmade",
+        items: [
+          { emoji: "🎁", name: "Gift Hamper", desc: "Keychain + flower + card combo.", price: "₹699" },
+          { emoji: "🖼️", name: "Photo Frame", desc: "Resin decorated photo frame. Custom.", price: "₹399" },
+          { emoji: "🕯️", name: "Decorated Candle", desc: "Hand decorated scented candle.", price: "₹299" },
+          { emoji: "📿", name: "Charm Bracelet", desc: "Handmade resin charm bracelet.", price: "₹249" },
+          { emoji: "🌸", name: "Pressed Flower Card", desc: "Real flowers pressed in greeting card.", price: "₹149" },
+          { emoji: "✨", name: "Custom Name Art", desc: "Your name in decorative art style.", price: "₹349" },
+        ]
+      }
+    };
+
+    function openModal(category) {
+      const d = data[category];
+      document.getElementById('modalTitle').textContent = d.title;
+      document.getElementById('modalSubtitle').textContent = d.subtitle;
+
+      const grid = document.getElementById('photoGrid');
+      grid.innerHTML = '';
+
+      d.items.forEach(item => {
+        grid.innerHTML += `
+          <div class="photo-card">
+            <div class="photo-box">
+              ${item.image
+                ? `<img src="${item.image}" alt="${item.name}">`
+                : item.emoji}
+            </div>
+            <div class="photo-info">
+              <p class="photo-name">${item.name}</p>
+              <p class="photo-desc">${item.desc}</p>
+              <p class="photo-price">${item.price}</p>
+            </div>
+          </div>`;
+      });
+
+      document.getElementById('modalBg').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('modalBg').classList.remove('open');
+    }
+
+    function closeModalBg(e) {
+      if (e.target === document.getElementById('modalBg')) closeModal();
+    }
+  </script>
+
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Samples</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #ffb6c1;
+      background-image:
+        radial-gradient(circle at 10% 20%, #ffd6e0 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, #ffccd5 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #ffe4ec 0%, transparent 60%);
+      font-family: 'Georgia', serif;
+      color: #3a1a1a;
+      padding: 60px 40px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: #7b3f00;
+      font-size: 2.5rem;
+      font-style: italic;
+      margin-bottom: 60px;
+    }
+
+    .grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .card {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+      background: rgba(255,255,255,0.4);
+      border: 1px solid rgba(123,63,0,0.15);
+    }
+
+    .card:hover { transform: scale(1.02); }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(123,63,0,0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      padding: 20px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .card:hover .card-overlay { opacity: 1; }
+
+    .card-name {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #e2c97e;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .view-btn {
+      padding: 8px 20px;
+      border: 1px solid #c9a84c;
+      color: #c9a84c;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .view-btn:hover {
+      background: #c9a84c;
+      color: #0d0d0d;
+    }
+
+    .modal-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .modal-bg.open { display: flex; }
+
+    .modal {
+      background: #fff5f0;
+      border: 1px solid rgba(201,168,76,0.2);
+      width: 100%;
+      max-width: 900px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative;
+      animation: fadeUp 0.3s ease;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: #c9a84c;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-title {
+      font-size: 1.8rem;
+      font-style: italic;
+      color: #7b3f00;
+      margin-bottom: 8px;
+    }
+
+    .modal-subtitle {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 36px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .photo-card {
+      background: #fff;
+      border: 1px solid rgba(201,168,76,0.1);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .photo-card:hover { border-color: rgba(201,168,76,0.5); }
+
+    .photo-box {
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f9e8ee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      overflow: hidden;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-info { padding: 14px; }
+
+    .photo-name {
+      font-size: 0.85rem;
+      color: #7b3f00;
+      margin-bottom: 4px;
+    }
+
+    .photo-desc {
+      font-size: 0.72rem;
+      color: #a0522d;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .photo-price {
+      font-size: 0.9rem;
+      color: #c1440e;
+      font-weight: bold;
+    }
+
+    .nav-row {
+      max-width: 1000px;
+      margin: 40px auto 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn {
+      padding: 12px 32px;
+      border: 1px solid rgba(201,168,76,0.4);
+      background: transparent;
+      color: #c9a84c;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #c9a84c;
+      color: #0d0d0d;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: #c9a84c; }
+  </style>
+</head>
+<body>
+
+  <h1>Artwork Samples</h1>
+
+  <div class="grid">
+
+    <div class="card" onclick="openModal('keychains')">
+      <img src="/static/images/Couples.jpeg" class="card-img" alt="Keychains">
+      <div class="card-overlay">
+        <p class="card-name">Keychains</p>
+        <p class="card-desc">Click to view all designs</p>
+        <button class="view-btn">View Samples</button>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('aipan')">
+      <img src="/static/images/Karwachauth_special.jpeg" class="card-img" alt="Aipan">
+      <div class="card-overlay">
+        <p class="card-name">Aipan</p>
+        <p class="card-desc">Click to view all types</p>
+        <button class="view-btn">View Samples</button>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('mandala')">
+      <img src="/static/images/Black_mandala.jpeg" class="card-img" alt="Mandala Art">
+      <div class="card-overlay">
+        <p class="card-name">Mandala Art</p>
+        <p class="card-desc">Click to view all paintings</p>
+        <button class="view-btn">View Samples</button>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('diy')">
+      <img src="/static/images/Butterfly_cd.jpeg" class="card-img" alt="DIY Art">
+      <div class="card-overlay">
+        <p class="card-name">DIY Art</p>
+        <p class="card-desc">Click to view all designs</p>
+        <button class="view-btn">View Samples</button>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('bouquets')">
+      <img src="/static/images/Bouquet.jpeg" class="card-img" alt="Bouquets">
+      <div class="card-overlay">
+        <p class="card-name">Bouquets</p>
+        <p class="card-desc">Click to view all bouquets</p>
+        <button class="view-btn">View Samples</button>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('mixed')">
+      <img src="/static/images/Customized_Phonecover.jpeg" class="card-img" alt="Mixed Art">
+      <div class="card-overlay">
+        <p class="card-name">Mixed Art</p>
+        <p class="card-desc">Click to view all gifts</p>
+        <button class="view-btn">View Samples</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nav-row">
+    <a href="/products" class="btn">← Back</a>
+    <a href="/feedback" class="btn">Leave Feedback →</a>
+  </div>
+
+  <div class="modal-bg" id="modalBg" onclick="closeModalBg(event)">
+    <div class="modal" id="modalBox">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
+      <div class="photo-grid" id="photoGrid"></div>
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      keychains: {
+        title: "Keychain Collection",
+        subtitle: "Handcrafted · Personalized · Durable",
+        items: [
+          { image: "/static/images/Couples.jpeg", name: "Circular Wooden Keychain", desc: "Customized wedding photo keychain", price: "₹249" },
+          { image: "/static/images/Anime.jpeg", name: "Square Wooden Keychain", desc: "Any anime Characters", price: "₹149" },
+          { image: "/static/images/Nda_squadron.jpeg", name: "Acrylic Keychain", desc: "Glossy finish. Long lasting.", price: "₹369" },
+          { image: "/static/images/Ghibli_art.jpeg", name: "Square Wooden Keychain", desc: "Customized Ghibli art key chain", price: "₹179" },
+          { image: "/static/images/Evil_eye.jpeg", name: "Black Acrylic Base Keychain", desc: "Black Acrylic base. Hard and long lasting", price: "₹179" },
+          { image: "/static/images/Hexagonal.jpeg", name: "Hexagonal Acrylic Keychain", desc: "Different shapes available", price: "₹149" },
+        ]
+      },
+      aipan: {
+        title: "Aipan Art Collection",
+        subtitle: "Neat and clean work · Traditional Touch · Beautiful patterns",
+        items: [
+          { image: "/static/images/Karwachauth_special.jpeg", name: "Karwachauth Special", desc: "One thali, one lota and channi", price: "₹849" },
+          { image: "/static/images/Yellow_chowki.jpeg", name: "Chowki", desc: "Yellow Om Chowki", price: "₹599" },
+          { image: "/static/images/Ganesh_Chowki.jpeg", name: "Chowki", desc: "Ganesh Chowki", price: "₹599" },
+          { image: "/static/images/Diyas.jpeg", name: "Pooja Diya", desc: "Beautifully designed diyas for pooja", price: "₹199" },
+          { image: "/static/images/Chowkis_Mandir.jpeg", name: "All Artworks", desc: "Handpainted artworks for decorating mandir", price: "₹2999" },
+        ]
+      },
+      mandala: {
+        title: "Mandala Art",
+        subtitle: "Hand Painted · Different Bases · Custom Sizes and designs",
+        items: [
+          { image: "/static/images/Black_mandala.jpeg", name: "Minimalist Style", desc: "Black background and detailed mandala at center", price: "₹199" },
+          { image: "/static/images/Small_mandala.jpeg", name: "Small Sized", desc: "Different sizes available", price: "₹179" },
+          { image: "/static/images/Detailed_colourful.jpeg", name: "Colourful", desc: "Multicoloured", price: "₹129" },
+          { image: "/static/images/Sunflower_mandala.jpeg", name: "Flower at Center", desc: "Flowery vibes at center", price: "₹179" },
+          { image: "/static/images/Grey_mandala.jpeg", name: "Random Design", desc: "Any design of your choice.", price: "₹229" },
+          { image: "/static/images/Framed_painting.jpeg", name: "Badrinath with Mandala", desc: "Beauty of temple and art for your home", price: "₹1999" },
+        ]
+      },
+      diy: {
+        title: "DIY Art",
+        subtitle: "Art and craft · Colorful · Unique",
+        items: [
+          { image: "/static/images/Paper_Lotus.jpeg", name: "Paper Lotus", desc: "Paper lotus for decoration", price: "₹129" },
+          { image: "/static/images/Butterfly_cd.jpeg", name: "Butterfly CD", desc: "Butterfly and Lavender beauty", price: "₹99" },
+          { image: "/static/images/Miniature_pot.jpeg", name: "Miniature Pot", desc: "Mini desk decor", price: "₹79" },
+          { image: "/static/images/PistaShell_Flower.jpeg", name: "Pista Shell Flower", desc: "Pista Shell converted into flower", price: "₹99" },
         ]
       },
       bouquets: {
