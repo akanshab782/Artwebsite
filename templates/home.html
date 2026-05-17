@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to My World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #ffb6c1;
+      background-image:
+        radial-gradient(circle at 10% 20%, #ffd6e0 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, #ffccd5 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #ffe4ec 0%, transparent 60%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Nunito', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── FLOATING ART TOOLS BACKGROUND ── */
+    .bg-arts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bg-art {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.12;
+      animation: floatArt linear infinite;
+    }
+
+    .bg-art:nth-child(1)  { left: 5%;  top: 10%; font-size: 2.5rem; animation-duration: 12s; animation-delay: 0s; }
+    .bg-art:nth-child(2)  { left: 15%; top: 70%; font-size: 1.8rem; animation-duration: 15s; animation-delay: 2s; }
+    .bg-art:nth-child(3)  { left: 25%; top: 30%; font-size: 2.2rem; animation-duration: 10s; animation-delay: 1s; }
+    .bg-art:nth-child(4)  { left: 35%; top: 80%; font-size: 1.6rem; animation-duration: 18s; animation-delay: 3s; }
+    .bg-art:nth-child(5)  { left: 45%; top: 15%; font-size: 2rem;   animation-duration: 14s; animation-delay: 0.5s; }
+    .bg-art:nth-child(6)  { left: 55%; top: 60%; font-size: 2.4rem; animation-duration: 11s; animation-delay: 4s; }
+    .bg-art:nth-child(7)  { left: 65%; top: 25%; font-size: 1.9rem; animation-duration: 16s; animation-delay: 1.5s; }
+    .bg-art:nth-child(8)  { left: 75%; top: 75%; font-size: 2.1rem; animation-duration: 13s; animation-delay: 2.5s; }
+    .bg-art:nth-child(9)  { left: 85%; top: 40%; font-size: 1.7rem; animation-duration: 17s; animation-delay: 0s; }
+    .bg-art:nth-child(10) { left: 92%; top: 10%; font-size: 2.3rem; animation-duration: 12s; animation-delay: 3.5s; }
+    .bg-art:nth-child(11) { left: 8%;  top: 50%; font-size: 1.5rem; animation-duration: 19s; animation-delay: 1s; }
+    .bg-art:nth-child(12) { left: 50%; top: 90%; font-size: 2rem;   animation-duration: 15s; animation-delay: 2s; }
+
+    @keyframes floatArt {
+      0%   { transform: translateY(0px) rotate(0deg); opacity: 0.12; }
+      50%  { transform: translateY(-20px) rotate(10deg); opacity: 0.18; }
+      100% { transform: translateY(0px) rotate(0deg); opacity: 0.12; }
+    }
+
+    /* ── PAINT SPLASH DECORATIONS ── */
+    .splash {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.15;
+      filter: blur(40px);
+    }
+
+    .splash-1 {
+      width: 300px; height: 300px;
+      background: #e8a0b4;
+      top: -100px; left: -100px;
+    }
+
+    .splash-2 {
+      width: 250px; height: 250px;
+      background: #d4a5c9;
+      bottom: -80px; right: -80px;
+    }
+
+    .splash-3 {
+      width: 200px; height: 200px;
+      background: #f4b8c1;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1.2s ease both;
+      padding: 40px;
+    }
+
+    /* ── PALETTE DECORATION TOP ── */
+    .art-deco-top {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      animation: wobble 3s ease infinite;
+    }
+
+    @keyframes wobble {
+      0%, 100% { transform: rotate(-3deg); }
+      50%       { transform: rotate(3deg); }
+    }
+
+    /* ── BRUSH STROKE TITLE DECORATION ── */
+    .brush-line {
+      width: 120px;
+      height: 6px;
+      background: linear-gradient(to right, #c1440e, #a0522d, #7b3f00);
+      margin: 0 auto 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .brush-line::before {
+      content: '';
+      position: absolute;
+      left: -20px; top: 50%;
+      transform: translateY(-50%);
+      width: 15px; height: 15px;
+      background: #c1440e;
+      border-radius: 50% 0 50% 0;
+    }
+
+    .brush-line::after {
+      content: '';
+      position: absolute;
+      right: -20px; top: 50%;
+      transform: translateY(-50%);
+      width: 15px; height: 15px;
+      background: #7b3f00;
+      border-radius: 0 50% 0 50%;
+    }
+
+    /* ── EYEBROW TEXT ── */
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: #a0522d;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    /* ── MAIN TITLE ── */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      font-style: italic;
+      font-weight: 600;
+      color: #7b3f00;
+      margin-bottom: 6px;
+      line-height: 1.1;
+      text-shadow: 3px 3px 10px rgba(123,63,0,0.15);
+    }
+
+    h1 span {
+      color: #c1440e;
+      position: relative;
+    }
+
+    /* ── SUBTITLE ── */
+    .subtitle {
+      font-size: 0.9rem;
+      color: #a0522d;
+      letter-spacing: 0.2em;
+      margin: 16px 0 40px;
+      font-weight: 400;
+    }
+
+    /* ── EXPLORE BUTTON ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 50px;
+      background: linear-gradient(135deg, #7b3f00, #c1440e);
+      color: #fff5f5;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      box-shadow:
+        0 6px 20px rgba(123,63,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #c1440e, #7b3f00);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn:hover::before { opacity: 1; }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(123,63,0,0.45);
+    }
+
+    .btn span { position: relative; z-index: 1; }
+
+    /* ── ART DECO BOTTOM ── */
+    .art-deco-bottom {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      opacity: 0.5;
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #7b3f00;
+    }
+
+    .dot.big {
+      width: 12px; height: 12px;
+      background: #c1440e;
+    }
+
+    /* ── COLOR PALETTE DOTS ── */
+    .palette-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .palette-dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 2px solid rgba(123,63,0,0.3);
+      animation: popIn 0.5s ease both;
+    }
+
+    .palette-dot:nth-child(1) { background: #ff6b6b; animation-delay: 0.1s; }
+    .palette-dot:nth-child(2) { background: #ffa500; animation-delay: 0.2s; }
+    .palette-dot:nth-child(3) { background: #ffdd59; animation-delay: 0.3s; }
+    .palette-dot:nth-child(4) { background: #6bcb77; animation-delay: 0.4s; }
+    .palette-dot:nth-child(5) { background: #4d96ff; animation-delay: 0.5s; }
+    .palette-dot:nth-child(6) { background: #c77dff; animation-delay: 0.6s; }
+    .palette-dot:nth-child(7) { background: #ff6b9d; animation-delay: 0.7s; }
+
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── PAINT SPLASHES ── -->
+  <div class="splash splash-1"></div>
+  <div class="splash splash-2"></div>
+  <div class="splash splash-3"></div>
+
+  <!-- ── FLOATING ART TOOLS ── -->
+  <div class="bg-arts">
+    <div class="bg-art">🎨</div>
+    <div class="bg-art">🖌️</div>
+    <div class="bg-art">✏️</div>
+    <div class="bg-art">🖼️</div>
+    <div class="bg-art">🎭</div>
+    <div class="bg-art">🖍️</div>
+    <div class="bg-art">🎨</div>
+    <div class="bg-art">🖌️</div>
+    <div class="bg-art">✂️</div>
+    <div class="bg-art">🎨</div>
+    <div class="bg-art">🖌️</div>
+    <div class="bg-art">🖼️</div>
+  </div>
+
+  <!-- ── MAIN CONTENT ── -->
+  <div class="container">
+
+    <div class="art-deco-top">
+      🎨 🖌️ 🎭
+    </div>
+
+    <p class="eyebrow">Handcrafted with love</p>
+
+    <h1>Welcome to<br><span>My World</span></h1>
+
+    <div class="brush-line"></div>
+
+    <p class="subtitle">
+      🖌️ Paintings · Keychains · Aipan · Flowers 🎨
+    </p>
+
+    <a href="/products" class="btn">
+      <span>Let's Explore 🎨</span>
+    </a>
+
+    <!-- Color Palette Dots -->
+    <div class="palette-row">
+      <div class="palette-dot"></div>
+      <div class="palette-dot"></div>
+      <div class="palette-dot"></div>
+      <div class="palette-dot"></div>
+      <div class="palette-dot"></div>
+      <div class="palette-dot"></div>
+      <div class="palette-dot"></div>
+    </div>
+
+    <div class="art-deco-bottom">
+      <div class="dot"></div>
+      <div class="dot big"></div>
+      <div class="dot"></div>
+      <div class="dot big"></div>
+      <div class="dot"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
